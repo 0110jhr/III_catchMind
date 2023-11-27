@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>loading</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden; /* 페이지 스크롤 막기 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .loading-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body
+    style="
+      background-image: url('./back.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    "
+  >
+    <div class="loading-spinner">
+      <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+      </div>
+    </div>
+
+    <script>
+      // 5초 후에 다음 페이지로 이동
+      setTimeout(function () {
+        window.location.href = "endpage.html";
+      }, 2000);
+    </script>
+
+    <script src="src/timer.js"></script>
+    <script src="src/gameStart.js"></script>
+    <script src="src/paint.js"></script>
+    <script src="src\word.js"></script>
+  </body>
+</html>

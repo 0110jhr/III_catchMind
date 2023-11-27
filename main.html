@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>catch-mind</title>
+  </head>
+
+  <body
+    style="
+      background-image: url('./back.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    "
+  >
+    <div class="main">
+      <div class="head">
+        <header>
+          <!-- title -->
+          <div
+            id="main_title"
+            style="margin: 0 auto; padding: 100px 0 30px 0; text-align: center"
+          >
+            <span>hoseo - catch mind </span>
+          </div>
+
+          <div id="info">
+            <div id="paintCount"></div>
+
+            <!-- 출제 단어 / 다음 단어 버튼 -->
+            <fieldset class="wordfild">
+              <p style="margin: auto">문제 : &nbsp;</p>
+              <span id="word-display" style="margin: auto"></span>
+              &nbsp; &nbsp; &nbsp;
+              <button id="next-word-btn">다음 단어</button>
+            </fieldset>
+            <br />
+
+            <!-- 단어 개수 지정 / 입력 / 랜덤 단어 생성-->
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 20px;
+              "
+            >
+              <label
+                for="word-count"
+                style="
+                  font-family: subFont;
+                  font-size: 20px;
+                  margin-right: 10px;
+                "
+                >랜덤 단어 개수 :</label
+              >
+              <input
+                type="number"
+                id="word-count"
+                style="
+                  width: 200px;
+                  border-radius: 10px;
+                  height: 25px;
+                  text-align: center;
+                "
+              />
+              <button id="generate-words-btn">랜덤 단어 생성</button>
+            </div>
+            <div style="text-align: center; padding: 10px; font-size: 11px">
+              ※ 개수 미 지정시, 기본값 1로 설정됩니다.
+            </div>
+
+            <!-- 남은 시간 (30초) / 끝나는 시간 -->
+            <br />
+            <div class="timer">
+              <div class="timer__controls"></div>
+              <br />
+              <div class="display" style="border-radius: 30%">
+                <h1 class="display__time-left"></h1>
+                <p class="display__end-time"></p>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+      <div class="section">
+        <section>
+          <div class="canvas-container">
+            <!-- 커스텀 커서 -->
+            <div class="cursor_range"></div>
+            <div class="cursor"></div>
+            <!-- 캔버스 -->
+            <canvas id="jsCanvas" class="canvas"></canvas>
+          </div>
+          <div class="controls">
+            <div class="controls__range">
+              <input
+                type="range"
+                id="jsRange"
+                min="0.1"
+                max="5.0"
+                value="2.5"
+                step="0.1"
+              />
+            </div>
+            <!-- undo redo 버튼 -->
+            <div class="controls__btns">
+              <button id="jsUndo">Undo</button>
+              <button id="jsRedo">Redo</button>
+            </div>
+
+            <div class="controls__btns">
+              <button id="jsMode">Fill</button>
+              <button id="jsClean">Clean</button>
+              <button id="jsEraser">Eraser</button>
+              <button id="jsSave">Save</button>
+            </div>
+            <div class="controls__colors" id="jsColors">
+              <div
+                class="controls__color jsColor"
+                style="background-color: black"
+              ></div>
+              <div
+                class="controls__color jsColor"
+                style="background-color: white"
+              ></div>
+              <div
+                class="controls__color jsColor"
+                style="background-color: red"
+              ></div>
+              <div
+                class="controls__color jsColor"
+                style="background-color: orange"
+              ></div>
+              <div
+                class="controls__color jsColor"
+                style="background-color: yellow"
+              ></div>
+              <div
+                class="controls__color jsColor"
+                style="background-color: green"
+              ></div>
+              <div
+                class="controls__color jsColor"
+                style="background-color: blue"
+              ></div>
+              <div
+                class="controls__color jsColor"
+                style="background-color: navy"
+              ></div>
+              <div
+                class="controls__color jsColor"
+                style="background-color: purple"
+              ></div>
+              <div>
+                <div class="custom__color">
+                  <input type="color" id="jsColorCustom" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="src/timer.js"></script>
+    <script src="src/gameStart.js"></script>
+    <script src="src/paint.js"></script>
+    <script src="src\word.js"></script>
+  </body>
+</html>

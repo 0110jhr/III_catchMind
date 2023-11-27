@@ -1,0 +1,330 @@
+@import "reset.css";
+
+@font-face {
+  font-family: "DNFBitBitv2";
+  src: url("../ttf/DNFBitBitv2.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "subFont";
+  src: url("../ttf/YJ_Obang_TTF.ttf") format("opentype");
+}
+
+.head {
+  /*background-color: #f1f4f8;*/
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.body {
+  font-family: subFont;
+}
+
+#main_title > span {
+  background: linear-gradient(to right, #a7a3ff, #ffa7a3, #671cc4, #5673bd);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: DNFBitBitv2;
+  font-size: 70px;
+
+  padding: 0 50%;
+  border-radius: 3px;
+  color: #ffffff;
+}
+.head .wordfild {
+  background-color: white;
+  border-radius: 15px;
+  margin-top: 30px;
+  display: flex;
+  font-size: 17px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  color: black;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#next-word-btn {
+  display: flex;
+  font-size: 17px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  /*background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);*/
+
+  background-color: #bdd8fe;
+  background-image: linear-gradient(315deg, #d1e4ff 0%, rgb(255, 208, 232) 74%);
+
+  color: black;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: 10px;
+  border: none;
+  padding: 10px 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 7px 3px 6px;
+}
+
+#generate-words-btn {
+  background-color: #bdd8fe;
+  /*이 색은 수정하자 */
+  background-image: linear-gradient(315deg, #d1e4ff 0%, rgb(255, 208, 232) 74%);
+
+  box-shadow: rgba(0, 0, 0, 0.15) 5px 3px 4px;
+  border-radius: 10px;
+  border: none;
+  padding: 5px 10px;
+  font-weight: 700;
+}
+
+.section {
+  /*background-color: #f1f4f8;*/
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0px 30px;
+}
+
+.canvas {
+  width: 900px;
+  height: 700px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.controls {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls .controls__btns {
+  margin-bottom: 30px;
+}
+
+.controls__btns button {
+  all: unset;
+  cursor: pointer;
+  background-color: white;
+  padding: 5px 0px;
+  width: 80px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.068);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.controls__btns button:active {
+  transform: scale(0.98);
+}
+
+.controls .controls__colors {
+  display: flex;
+}
+
+.controls__colors .controls__color {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.068);
+}
+
+.controls .controls__range {
+  margin-bottom: 30px;
+}
+
+.display {
+  text-align: center;
+  border-radius: 30%;
+}
+
+.display > * {
+  font-family: subFont;
+  font-size: 20px;
+  padding: 1%;
+}
+
+/* --- 작은 화면 크기에 대한 스타일 (반응형) --- */
+
+@media only screen and (max-width: 768px) {
+  .head .wordfild,
+  .head #showtime,
+  .section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .head .wordfild {
+    margin-top: 15px;
+  }
+
+  #next-word-btn {
+    margin-top: 10px;
+  }
+
+  .canvas {
+    width: 100%;
+    height: 300px; /* 작은 화면에서도 잘 보일 수 있도록 조정 */
+  }
+
+  .controls .controls__range {
+    margin-bottom: 15px;
+  }
+
+  .controls__colors {
+    flex-wrap: wrap;
+  }
+
+  .controls__colors .controls__color {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .controls__btns button {
+    width: 60px;
+    font-size: 10px;
+  }
+}
+
+/*----- 로딩 스피너 --------*/
+
+.sk-cube-grid {
+  width: 40px;
+  height: 40px;
+  margin: 100px auto;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #333;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+  animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
+  }
+}
+
+/*  컬러 픽커 스타일 */
+
+.custom__color #jsColorCustom {
+  -webkit-appearance: none;
+  outline: none;
+  padding: 0;
+  border: none;
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+#jsColorCustom::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+}
+
+/* 커서 보이게 */
+
+.canvas-container {
+  position: relative;
+  cursor: none; /* 기본 커서 감추기 */
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* 마우스 이벤트 무시 */
+}
+
+.cursor_range {
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 0.2rem;
+  height: 0.2rem;
+  background-color: #ff2424;
+  position: absolute;
+  pointer-events: none;
+  display: none; /* 초기에는 숨김 */
+}

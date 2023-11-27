@@ -1,0 +1,125 @@
+/* 리셋 CSS */
+
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&display=swap");
+
+@font-face {
+  font-family: "DNFBitBitv2";
+  src: url("../ttf/DNFBitBitv2.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "subFont";
+  src: url("../ttf/YJ_Obang_TTF.ttf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navi p {
+  text-align: center;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  -webkit-background-clip: text; /* Safari, Chrome 등 웹킷 브라우저 지원 */
+  background-clip: text;
+  color: transparent; /* 글자의 실제 색상을 투명하게 설정 */
+
+  text-align: center;
+  padding: 15px;
+  margin: 15px;
+  font-size: 60px;
+  font-weight: 600;
+  font-family: DNFBitBitv2;
+}
+ul,
+li {
+  list-style: none;
+}
+
+.slidebox {
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+.slidebox .slidelist {
+  position: relative;
+  white-space: nowrap;
+  font-size: 0;
+  overflow: hidden;
+}
+.slidebox .slidelist .slideitem {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #fff;
+  width: 100%;
+  transition: all 1s;
+}
+.slidebox .slidelist .slideitem > a {
+  display: block;
+  width: auto;
+  position: relative;
+}
+.slidebox .slidelist .slideitem > a img {
+  max-width: 100%;
+}
+
+.slidebox .slide-control [class*="control"] label {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.slidebox .slide-control [class*="control"] label.prev {
+  left: -50px;
+  background: #fad0c4 url("./img/left-arrow.png") center center / 50% no-repeat;
+}
+.slidebox .slide-control [class*="control"] label.next {
+  right: -50px;
+  background: #fad0c4 url("./img/right-arrow.png") center center / 50% no-repeat;
+}
+
+[name="slide"] {
+  display: none;
+}
+#slide01:checked ~ .slidelist .slideitem {
+  left: 0;
+}
+#slide02:checked ~ .slidelist .slideitem {
+  left: -100%;
+}
+#slide03:checked ~ .slidelist .slideitem {
+  left: -200%;
+}
+#slide04:checked ~ .slidelist .slideitem {
+  left: -300%;
+}
+
+.slide-control [class*="control"] {
+  display: none;
+}
+#slide01:checked ~ .slide-control .control01 {
+  display: block;
+}
+#slide02:checked ~ .slide-control .control02 {
+  display: block;
+}
+#slide03:checked ~ .slide-control .control03 {
+  display: block;
+}
+#slide04:checked ~ .slide-control .control04 {
+  display: block;
+}
+p {
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f1f4f8;
+  font-family: subFont;
+}

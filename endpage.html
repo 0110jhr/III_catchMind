@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/endpage.css" />
+    <link rel="stylesheet" href="./src/Firecracker.css" />
+    <title>endPage</title>
+  </head>
+  <body
+    style="
+      background-image: url('./back.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    "
+  >
+    <div class="navi">
+      <p>GAME CLEAR</p>
+    </div>
+    <div class="slidebox">
+      <input type="radio" name="slide" id="slide01" checked="" />
+      <input type="radio" name="slide" id="slide02" />
+      <input type="radio" name="slide" id="slide03" />
+      <ul class="slidelist">
+        <li class="slideitem">
+          <a href="endpage.html"
+            ><img src="./src/img/img1.png" width="500"
+          /></a>
+        </li>
+        <li class="slideitem">
+          <a href="index.html"><img src="./src/img/img2.jpg" width="500" /></a>
+        </li>
+        <li class="slideitem">
+          <a href="endpage.html"
+            ><img src="./src/img/img3.jpg" width="500"
+          /></a>
+        </li>
+
+        <li class="slideitem">
+          <a><img src="" /></a>
+        </li>
+      </ul>
+      <div class="slide-control">
+        <div class="control01">
+          <label for="slide03" class="prev"></label>
+          <p>게임이 종료되었습니다.</p>
+          <label for="slide02" class="next"></label>
+        </div>
+
+        <div class="control02">
+          <label for="slide01" class="prev"></label>
+          <p>게임이 종료되었습니다.</p>
+          <label for="slide03" class="next"></label>
+        </div>
+
+        <div class="control03">
+          <label for="slide02" class="prev"></label>
+          <p>게임이 종료되었습니다.</p>
+          <label for="slide01" class="next"></label>
+        </div>
+      </div>
+    </div>
+    <script src="./src/Firecracker.js"></script>
+  </body>
+</html>
